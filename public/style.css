@@ -1,0 +1,47 @@
+/* Custom styles for your Weather App */
+.container {
+    margin-top: 50px;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    margin-top: 10px;
+  }
+  
+/* styles for message */
+  .weather-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .weather-info__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .weather-info__temperature {
+    font-size: 18px;
+  }
+  
+  .weather-info__icon {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+  }
+  

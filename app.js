@@ -8,6 +8,7 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static("public"));
 
 
 app.get("/", (req,res)=>{
@@ -34,17 +35,25 @@ app.post("/",(req,res)=>{
             const weatherDescription = weatherData.current.condition.text;
             const weatherIcon = weatherData.current.condition.icon
 
-            const message =
-            "<h1>This is today's weather in "+city+":</h1>" +
-            "<p>The temperature is " +
-            temp +
-            " degrees Celsius with " +
-            weatherDescription +
-            "</p>"+
-            "<img src='" + weatherIcon + "' alt='Weather Icon'>"; // Add the <img> tag for the weather icon;
+            // const message =
+            // "<h1>This is today's weather in "+city+":</h1>" +
+            // "<p>The temperature is " +
+            // temp +
+            // " degrees Celsius with " +
+            // weatherDescription +
+            // "</p>"+
+            // "<img src='" + weatherIcon + "' alt='Weather Icon'>"; // Add the <img> tag for the weather icon;
 
+            const message = `
+            <div class="weather-info">
+            <h1 class="weather-info__title">This is today's weather in ${city}:</h1>
+            <p class="weather-info__temperature">
+            The temperature is ${temp} degrees Celsius with ${weatherDescription}
+            </p>
+            <img class="weather-info__icon" src="${weatherIcon}" alt="Weather Icon">
+            </div>
+            `;
             res.send(message);
-
         })
     })
 
